@@ -1,0 +1,47 @@
+/*
+>Full credit to Arbel Hakopian, creator of HalfStyle.
+>
+>Reach me https://twitter.com/acekevo
+>I did this to express how useful I found this plugin.
+**/
+
+/*!Let it start here*/
+body{
+    background: lightblue;
+}
+/* start half-style hs-horizontal-third */
+.halfStyle.hs-horizontal-third { /* base char and also the bottom 1/3 */
+    position:relative;
+    display:inline-block;
+    font-size:80px; /* or any font size will work */
+    color: transparent;
+    overflow:hidden;
+    white-space: pre; /* to preserve the spaces from collapsing */
+    color: #000;
+    text-shadow: 0px 0px 0px #0af; /* for demo purposes */
+}
+.halfStyle.hs-horizontal-third:before { /* creates the top 1/3 */
+    display:block;
+    z-index:2;
+    position:absolute;
+    top:0;
+    height: 35%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: #0f0; /* for demo purposes */
+    /*text-shadow: 2px -2px 0px #fa0;  for demo purposes */
+}
+.halfStyle.hs-horizontal-third:after { /* creates the middle 1/3 */
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:0;
+    height: 60%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: #f00; /* for demo purposes */
+    text-shadow: 0px 2px 2px white; /* for demo purposes */
+}
+/* end half-style hs-horizontal-third */
